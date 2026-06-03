@@ -1,0 +1,27 @@
+---
+description: AI Fortune Teller — project conventions, architecture, and living context
+alwaysApply: true
+---
+
+# AI Fortune Teller
+
+Before non-trivial work, read [MEMORY.md](../../MEMORY.md) for current state, recent fixes, and changelog.
+
+Architecture and API details live in [PLAN.md](../../PLAN.md). Do not duplicate them in edits unless the spec changed.
+
+## Non-negotiables
+
+- **Stack:** Vite 8, React 19, Tailwind CSS v4 — no TypeScript or new deps without user approval.
+- **API:** Only `src/api/fortuneTeller.js` calls APIVerve (`GET https://api.apiverve.com/v1/fortuneteller`, header `X-API-Key` from `VITE_API_KEY`).
+- **No backend** unless explicitly requested.
+- **Never commit** `.env` or secrets.
+- **Components** do not `fetch` directly — use `useFortune` + `fetchFortune`.
+- **Categories:** Import `VALID_CATEGORIES` from `src/api/fortuneTeller.js`.
+
+## After completing work
+
+Update [MEMORY.md](../../MEMORY.md): **Current state**, **Changelog** (date + summary), and **Known issues** if applicable.
+
+## Style
+
+Minimal diffs; use Tailwind utilities and `@theme` tokens from `index.css`; preserve accessibility (`aria-live`, form labels, `role="alert"` on errors). Use `motion-reduce:` variants on animations.
