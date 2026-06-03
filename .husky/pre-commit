@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+echo "pre-commit: checking staged files for secrets…"
+npm run check-secrets
+
+echo "pre-commit: lint…"
+npm run lint
+
+echo "pre-commit: tests…"
+npm run test

@@ -29,6 +29,7 @@ A **Vite 8 + React 19** single-page app that calls the **APIVerve Fortune Teller
 | Env | `.env` gitignored; `.env.example` documents `VITE_API_KEY` |
 | Build | `npm run build`, `npm run lint`, and `npm run test` pass |
 | Tests | Vitest + Testing Library — `fortuneTeller.test.js`, `ErrorMessage.test.jsx` |
+| Git hooks | Husky `pre-commit`: `check-secrets` → `lint` → `test` |
 
 ### Not implemented (future)
 
@@ -111,7 +112,10 @@ npm run dev      # http://localhost:5173 (typical)
 npm run build    # output → dist/
 npm run preview  # preview production build
 npm run test     # Vitest unit tests (jsdom)
+npm run prepare  # installs Husky hooks (runs automatically after npm install)
 ```
+
+After `npm install`, Husky runs `prepare` and wires `.husky/pre-commit`. Commits are blocked if secrets are staged, lint fails, or tests fail.
 
 Restart dev server after changing `.env`.
 
@@ -120,6 +124,11 @@ Restart dev server after changing `.env`.
 ## Changelog
 
 > AI: Append new entries at the top. Include date and one-line summary.
+
+### 2026-06-03 — Husky pre-commit hook
+
+- `husky` + `scripts/check-staged-secrets.mjs` (blocks `.env` and `apv_` keys in staged content).
+- Pre-commit runs `check-secrets`, `lint`, `test`.
 
 ### 2026-06-03 — Vitest unit tests
 

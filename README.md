@@ -124,7 +124,21 @@ Only variables prefixed with `VITE_` are exposed to the client bundle. The key i
 |------|----------|
 | Local development | `npm run dev` |
 | Verify production build | `npm run build && npm run preview` |
-| Pre-commit check | `npm run lint && npm run test` |
+| Pre-commit check | `npm run lint && npm run test` (or just `git commit` — Husky runs these automatically) |
+
+### Git pre-commit hook (Husky)
+
+After `npm install`, Husky is enabled via the `prepare` script. Each `git commit` runs, in order:
+
+1. **`npm run check-secrets`** — refuses staged `.env` files, `apv_` keys with 16+ real characters (not placeholders like `apv_your_key_here`), and PEM private keys
+2. **`npm run lint`**
+3. **`npm run test`**
+
+Hook script: [`.husky/pre-commit`](./.husky/pre-commit). Secret scanner: [`scripts/check-staged-secrets.mjs`](./scripts/check-staged-secrets.mjs).
+
+To bypass in an emergency only: `git commit --no-verify` (not recommended).
+
+New clones: run `npm install` once so `prepare` registers hooks.
 
 ---
 
