@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.0.1",
     "@tailwindcss/vite": "^4.3.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
