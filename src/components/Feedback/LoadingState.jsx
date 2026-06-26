@@ -1,14 +1,17 @@
 export default function LoadingState() {
   return (
-    <div className="px-4 py-10 text-center" role="status" aria-live="polite" aria-busy="true">
-      <div
-        className="mb-4 text-6xl drop-shadow-[0_0_12px_rgba(212,175,55,0.5)] motion-reduce:animate-none motion-safe:animate-pulse"
+    <div
+      className="flex flex-col items-center gap-4 rounded-2xl border-[3px] border-ink bg-surface px-6 py-10 text-center shadow-[8px_8px_0_0_var(--color-ink)]"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+    >
+      <span
+        className="size-10 animate-spin rounded-full border-4 border-ink/20 border-t-ink motion-reduce:animate-none"
         aria-hidden="true"
-      >
-        🔮
-      </div>
-      <p className="m-0 font-display text-gold-light">Consulting the stars…</p>
-      <p className="mt-2 text-base text-fortune-muted italic">The cosmos is weaving your fortune</p>
+      />
+      <p className="m-0 font-display text-lg font-bold lowercase text-ink">reading the signs…</p>
+      <p className="m-0 text-base font-medium text-muted">Lining up your fortune.</p>
     </div>
   )
 }

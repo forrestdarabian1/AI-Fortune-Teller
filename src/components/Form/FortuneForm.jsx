@@ -14,7 +14,7 @@ export default function FortuneForm({ onSubmit, loading }) {
 
   return (
     <form
-      className="flex flex-col gap-5 rounded-xl border border-gold/25 bg-bg-card p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-md"
+      className="flex flex-col gap-6 rounded-2xl border-[3px] border-ink bg-surface p-6 shadow-[8px_8px_0_0_var(--color-ink)] sm:p-7"
       onSubmit={handleSubmit}
       noValidate
     >

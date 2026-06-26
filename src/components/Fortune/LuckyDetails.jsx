@@ -2,16 +2,16 @@ import { REVEAL_BASE, REVEAL_DELAYS } from '../../lib/revealClasses'
 
 const COLOR_MAP = {
   red: '#e74c3c',
-  orange: '#e67e22',
-  yellow: '#f1c40f',
-  green: '#2ecc71',
-  blue: '#3498db',
+  orange: '#f37032',
+  yellow: '#fdc115',
+  green: '#a4cf57',
+  blue: '#27b0c2',
   purple: '#9b59b6',
   pink: '#e91e8c',
   gold: '#d4af37',
   silver: '#c0c0c0',
   white: '#f5f5f5',
-  black: '#1a1a2e',
+  black: '#000000',
   brown: '#8b4513',
   wood: '#8b6914',
   fire: '#ff4500',
@@ -35,24 +35,26 @@ export default function LuckyDetails({
 
   return (
     <section
-      className={`rounded-xl border border-gold/25 bg-bg-card px-6 py-5 ${REVEAL_BASE} ${REVEAL_DELAYS.third}`}
+      className={`rounded-2xl border-[3px] border-ink bg-surface px-6 py-5 shadow-[8px_8px_0_0_var(--color-ink)] ${REVEAL_BASE} ${REVEAL_DELAYS.third}`}
       aria-label="Lucky details"
     >
-      <h3 className="m-0 mb-4 font-display text-sm tracking-widest text-gold uppercase">Lucky signs</h3>
+      <h3 className="m-0 mb-4 font-display text-xs font-bold tracking-[0.18em] text-ink uppercase">
+        Lucky signs
+      </h3>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {luckyNumbers?.length > 0 && (
           <div className="flex flex-col gap-1">
-            <span className="text-xs tracking-wide text-fortune-muted uppercase">Numbers</span>
-            <span className="font-display tracking-wide text-gold-light">{luckyNumbers.join(', ')}</span>
+            <span className="text-xs font-bold tracking-[0.14em] text-muted uppercase">Numbers</span>
+            <span className="font-display text-lg font-bold tracking-wide text-ink">{luckyNumbers.join(', ')}</span>
           </div>
         )}
         {luckyColor && (
           <div className="flex flex-col gap-1">
-            <span className="text-xs tracking-wide text-fortune-muted uppercase">Color</span>
-            <span className="flex items-center gap-2">
+            <span className="text-xs font-bold tracking-[0.14em] text-muted uppercase">Color</span>
+            <span className="flex items-center gap-2 font-display font-bold text-ink">
               {swatchColor && (
                 <span
-                  className="inline-block size-5 shrink-0 rounded-full border border-gold/25"
+                  className="inline-block size-5 shrink-0 rounded-full border-2 border-ink"
                   style={{ backgroundColor: swatchColor }}
                   aria-hidden="true"
                 />
@@ -63,14 +65,14 @@ export default function LuckyDetails({
         )}
         {luckyElement && (
           <div className="flex flex-col gap-1">
-            <span className="text-xs tracking-wide text-fortune-muted uppercase">Element</span>
-            <span>{luckyElement}</span>
+            <span className="text-xs font-bold tracking-[0.14em] text-muted uppercase">Element</span>
+            <span className="font-display font-bold text-ink">{luckyElement}</span>
           </div>
         )}
         {luckyDay && (
           <div className="flex flex-col gap-1">
-            <span className="text-xs tracking-wide text-fortune-muted uppercase">Day</span>
-            <span>{luckyDay}</span>
+            <span className="text-xs font-bold tracking-[0.14em] text-muted uppercase">Day</span>
+            <span className="font-display font-bold text-ink">{luckyDay}</span>
           </div>
         )}
       </div>

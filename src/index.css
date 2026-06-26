@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
+/* 300 Feet Out brand direction — see https://brand.300feetout.com/
+   Bold yellow + black, minimal grey, playful secondary accents.
+   Display = geometric round (Poppins ~ Avant Garde Gothic); body = grotesque (Inter ~ Aktiv Grotesk). */
 @theme {
-  --color-bg-deep: #0d0a1a;
-  --color-bg-mid: #1a1230;
-  --color-bg-card: rgba(30, 20, 50, 0.85);
-  --color-gold: #d4af37;
-  --color-gold-light: #f0d78c;
-  --color-purple: #9b59b6;
-  --color-purple-light: #c39bd3;
-  --color-fortune-text: #e8e0f0;
-  --color-fortune-muted: #a89bb8;
-  --color-fortune-error: #e74c6f;
-  --font-display: 'Cinzel', Georgia, serif;
-  --font-body: 'Crimson Pro', Georgia, serif;
+  --color-brand: #fdc115;
+  --color-brand-dark: #e0a800;
+  --color-ink: #000000;
+  --color-surface: #ffffff;
+  --color-cream: #eee3cf;
+  --color-muted: #524f47;
+  --color-accent-orange: #f37032;
+  --color-accent-blue: #27b0c2;
+  --color-accent-green: #a4cf57;
+  --color-error: #c2371b;
+  --font-display: 'Poppins', 'Century Gothic', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -25,7 +28,7 @@
   }
 
   body {
-    @apply m-0 min-h-screen bg-bg-deep font-body text-lg leading-relaxed text-fortune-text antialiased;
+    @apply m-0 min-h-screen bg-brand font-body text-base leading-relaxed text-ink antialiased;
   }
 
   #root {
@@ -35,7 +38,7 @@
   h1,
   h2,
   h3 {
-    @apply font-display font-semibold leading-tight;
+    @apply font-display font-bold leading-tight tracking-tight;
   }
 
   button {
@@ -48,24 +51,6 @@
   }
 
   legend {
-    @apply mb-3 font-display text-sm font-semibold tracking-wider text-gold uppercase;
-  }
-}
-
-@layer components {
-  .stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.4), transparent),
-      radial-gradient(1px 1px at 80px 120px, rgba(255, 255, 255, 0.3), transparent),
-      radial-gradient(1px 1px at 150px 60px, rgba(255, 255, 255, 0.35), transparent),
-      radial-gradient(1px 1px at 220px 180px, rgba(255, 255, 255, 0.25), transparent),
-      radial-gradient(1px 1px at 300px 40px, rgba(255, 255, 255, 0.3), transparent),
-      radial-gradient(1.5px 1.5px at 400px 90px, rgba(212, 175, 55, 0.4), transparent),
-      radial-gradient(1px 1px at 500px 200px, rgba(255, 255, 255, 0.2), transparent);
-    background-size: 550px 250px;
-    opacity: 0.7;
+    @apply mb-3 font-display text-xs font-bold tracking-[0.18em] text-ink uppercase;
   }
 }

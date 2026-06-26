@@ -13,17 +13,17 @@ export default function CategorySelect({ value, onChange, disabled }) {
   return (
     <fieldset disabled={disabled}>
       <legend>Choose your focus</legend>
-      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Fortune category">
+      <div className="flex flex-wrap gap-2.5" role="radiogroup" aria-label="Fortune category">
         {VALID_CATEGORIES.map((cat) => {
           const isActive = value === cat
           return (
             <label
               key={cat}
-              className={`cursor-pointer rounded-full border px-4 py-2 text-sm transition-colors ${
+              className={`cursor-pointer rounded-full border-2 border-ink px-4 py-1.5 font-display text-sm font-semibold transition-colors ${
                 isActive
-                  ? 'border-gold bg-gold/15 text-gold-light'
-                  : 'border-gold/25 bg-black/20 text-fortune-muted hover:border-gold hover:text-fortune-text'
-              } ${disabled ? 'cursor-not-allowed opacity-60' : ''}`}
+                  ? 'bg-ink text-brand'
+                  : 'bg-surface text-ink hover:bg-cream'
+              } ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}
             >
               <input
                 type="radio"

@@ -2,7 +2,7 @@
 
 > **For AI agents:** Read this file at the start of substantial tasks. Update the [Changelog](#changelog) and [Current state](#current-state) sections when you finish meaningful work. Do not duplicate [PLAN.md](./PLAN.md)—link to it for architecture/API specs.
 
-**Last updated:** 2026-06-03
+**Last updated:** 2026-06-26
 
 ---
 
@@ -25,7 +25,7 @@ A **Vite 8 + React 19** single-page app that calls the **APIVerve Fortune Teller
 | API client | `src/api/fortuneTeller.js` — `fetchFortune`, `validateQuestion`, `VALID_CATEGORIES` |
 | Hook | `src/hooks/useFortune.js` — `loading`, `error`, `fortune`, `revealFortune`, `clearError` |
 | UI | Full component tree under `src/components/` (Layout, Form, Fortune, Feedback) |
-| Styling | Tailwind CSS v4 + `tailwindcss-animate`; `@theme` in `src/index.css`; utilities in components |
+| Styling | Tailwind CSS v4 + `tailwindcss-animate`; `@theme` in `src/index.css`; utilities in components. **300 Feet Out brand**: yellow `#fdc115` + black, Poppins display / Inter body, hard offset shadows + 3px black borders |
 | Env | `.env` gitignored; `.env.example` documents `VITE_API_KEY` |
 | Build | `npm run build`, `npm run lint`, and `npm run test` pass |
 | Tests | Vitest + Testing Library — `fortuneTeller.test.js`, `ErrorMessage.test.jsx` |
@@ -124,6 +124,13 @@ Restart dev server after changing `.env`.
 ## Changelog
 
 > AI: Append new entries at the top. Include date and one-line summary.
+
+### 2026-06-26 — 300 Feet Out rebrand
+
+- Restyled entire UI to [3FO brand](https://brand.300feetout.com/): brand yellow `#fdc115` page fill, black ink, minimal grey, secondary accents (orange/blue/green/cream).
+- Fonts swapped: display `Poppins` (geometric, ~Avant Garde Gothic), body `Inter` (~Aktiv Grotesk); lowercase display headlines.
+- Bold/offbeat treatment: 3px black borders + hard offset shadows (`shadow-[8px_8px_0_0_…]`), pill radios (active = black/yellow), invert-on-hover button.
+- Removed mystical theme (gold/purple, `.stars`, gradient, crystal-ball emoji). Accent-colored result cards (fortune = yellow, insight = blue, error = orange). Accessibility attrs preserved.
 
 ### 2026-06-03 — Husky pre-commit hook
 

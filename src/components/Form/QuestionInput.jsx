@@ -4,7 +4,7 @@ const PLACEHOLDERS = {
   general: 'What does the future hold for me?',
   love: 'Will I find harmony in my relationships?',
   career: 'What opportunities await in my work life?',
-  health: 'What guidance do the stars offer for my wellbeing?',
+  health: 'What guidance is there for my wellbeing?',
   wealth: 'What fortunes lie on my financial horizon?',
   travel: 'Where might my next journey lead me?',
 }
@@ -15,7 +15,10 @@ export default function QuestionInput({ category, value, onChange, disabled }) {
 
   return (
     <div>
-      <label htmlFor="question" className="mb-2 block font-display text-sm font-semibold tracking-wider text-gold uppercase">
+      <label
+        htmlFor="question"
+        className="mb-3 block font-display text-xs font-bold tracking-[0.18em] text-ink uppercase"
+      >
         Your question (optional)
       </label>
       <textarea
@@ -27,10 +30,10 @@ export default function QuestionInput({ category, value, onChange, disabled }) {
         maxLength={MAX_QUESTION_LENGTH}
         rows={3}
         disabled={disabled}
-        className="min-h-[4.5rem] w-full resize-y rounded-lg border border-gold/25 bg-black/30 px-4 py-3 font-body text-base text-fortune-text placeholder:text-fortune-muted/70 focus:border-gold focus:ring-2 focus:ring-gold/20 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+        className="min-h-[4.5rem] w-full resize-y rounded-xl border-2 border-ink bg-surface px-4 py-3 font-body text-base text-ink placeholder:text-muted/60 focus:border-ink focus:ring-4 focus:ring-brand focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
       />
       <span
-        className={`mt-1 block text-right text-sm ${remaining < 50 ? 'text-gold' : 'text-fortune-muted'}`}
+        className={`mt-1.5 block text-right text-sm font-semibold ${remaining < 50 ? 'text-accent-orange' : 'text-muted'}`}
         aria-live="polite"
       >
         {value.length} / {MAX_QUESTION_LENGTH}

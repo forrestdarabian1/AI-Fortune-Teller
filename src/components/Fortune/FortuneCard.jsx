@@ -14,13 +14,19 @@ export default function FortuneCard({ fortune, timeframe, category }) {
 
   return (
     <article
-      className={`rounded-xl border border-gold/25 bg-bg-card p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] ${REVEAL_BASE} ${REVEAL_DELAYS.first}`}
+      className={`rounded-2xl border-[3px] border-ink bg-brand p-6 shadow-[8px_8px_0_0_var(--color-ink)] sm:p-7 ${REVEAL_BASE} ${REVEAL_DELAYS.first}`}
     >
-      <span className="mb-4 inline-block rounded-full border border-purple bg-purple/25 px-3 py-1 font-display text-xs tracking-widest text-purple-light uppercase">
+      <span className="mb-4 inline-block rounded-full border-2 border-ink bg-ink px-3 py-1 font-display text-xs font-bold tracking-[0.18em] text-brand uppercase">
         {label}
       </span>
-      <blockquote className="m-0 text-xl leading-relaxed text-fortune-text italic">{fortune}</blockquote>
-      {timeframe && <p className="mt-4 mb-0 text-[0.95rem] text-gold">{timeframe}</p>}
+      <blockquote className="m-0 font-display text-2xl leading-snug font-semibold text-ink">
+        {fortune}
+      </blockquote>
+      {timeframe && (
+        <p className="mt-4 mb-0 font-display text-sm font-bold tracking-wide text-ink/70 uppercase">
+          {timeframe}
+        </p>
+      )}
     </article>
   )
 }
