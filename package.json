@@ -7,10 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "npm run build && wrangler dev",
     "test": "vitest run",
     "check-secrets": "node scripts/check-staged-secrets.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@rolldown/binding-win32-x64-msvc": "^1.0.1",
@@ -21,6 +22,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.42.3",
     "@eslint/js": "^10.0.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -34,7 +36,8 @@
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "vite": "^8.0.12",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "wrangler": "^4.105.0"
   },
   "optionalDependencies": {
     "@rolldown/binding-linux-x64-gnu": "^1.1.2"
